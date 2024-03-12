@@ -26,12 +26,12 @@ class InputNotValidException extends Exception
     /**
      * @throws ReflectionException
      */
-    public function setPrevious(self $inputNotValidException): self
+    public function setPrevious(self $previous): self
     {
         try {
-            (new ReflectionClass($this))->getProperty("previous")->setValue($this, $inputNotValidException);
+            (new ReflectionClass($this))->getProperty("previous")->setValue($this, $previous);
         } catch (ReflectionException) {
-            $this->__construct($this->getMessage(), $this->getCode(), $inputNotValidException);
+            $this->__construct($this->getMessage(), $this->getCode(), $previous);
         }
         return $this;
     }

@@ -4,7 +4,7 @@ namespace YellowCable\Cron\Tests;
 
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
-use YellowCable\Cron\Line\Entry;
+use YellowCable\Cron\Entry\Entry;
 
 class AsAttributeTest extends TestCase
 {

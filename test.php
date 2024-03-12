@@ -1,6 +1,6 @@
 <?php
 
-use YellowCable\Cron\Line\Field\Time\Minute;
+use YellowCable\Cron\Entry\Field\Time\Minute;
 
 require_once("vendor/autoload.php");
 
