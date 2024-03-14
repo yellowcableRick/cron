@@ -10,13 +10,15 @@ use YellowCable\Cron\Entry\Field\Time\DayOfWeek;
 use YellowCable\Cron\Entry\Field\Time\Hour;
 use YellowCable\Cron\Entry\Field\Time\Minute;
 use YellowCable\Cron\Entry\Field\Time\Month;
+use YellowCable\Cron\Entry\Host\HostInterface;
 
 #[Attribute(Attribute::TARGET_CLASS)]
 class Yearly extends Entry
 {
     public function __construct(
         public Command $command,
-        public ?Redirection $redirection,
+        public ?Redirection $redirection = null,
+        public ?HostInterface $host = null,
     ) {
         parent::__construct(
             new Minute("0"),
@@ -26,6 +28,7 @@ class Yearly extends Entry
             new DayOfWeek("*"),
             $command,
             $redirection,
+            $host
         );
     }
 }

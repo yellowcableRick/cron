@@ -10,13 +10,15 @@ use YellowCable\Cron\Entry\Field\Time\DayOfWeek;
 use YellowCable\Cron\Entry\Field\Time\Hour;
 use YellowCable\Cron\Entry\Field\Time\Minute;
 use YellowCable\Cron\Entry\Field\Time\Month;
+use YellowCable\Cron\Entry\Host\HostInterface;
 
 #[Attribute(Attribute::TARGET_CLASS)]
 class Weekly extends Entry
 {
     public function __construct(
         public Command $command,
-        public ?Redirection $redirection,
+        public ?Redirection $redirection = null,
+        public ?HostInterface $host = null,
         public ?DayOfWeek $dayOfWeek = null
     ) {
         parent::__construct(
@@ -27,6 +29,7 @@ class Weekly extends Entry
             $dayOfWeek ?? new DayOfWeek("0"),
             $command,
             $redirection,
+            $host
         );
     }
 }

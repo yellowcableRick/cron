@@ -22,7 +22,7 @@ use YellowCable\Cron\Entry\Yearly;
 /**
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class LineTest extends TestCase
+class EntryTest extends TestCase
 {
     public function test(): void
     {
@@ -32,43 +32,35 @@ class LineTest extends TestCase
             new DayOfMonth("*"),
             new Month("*"),
             new DayOfWeek("*"),
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("0 0 1 1 * echo test ", (string) new Yearly(
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("0 0 1 1 * echo test ", (string) new Annually(
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("0 0 1 * * echo test ", (string) new Monthly(
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("0 0 * * 0 echo test ", (string) new Weekly(
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("0 0 * * * echo test ", (string) new Daily(
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("0 0 * * * echo test ", (string) new Midnight(
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("0 * * * * echo test ", (string) new Hourly(
-            new Command("echo test"),
-            null
+            new Command("echo test")
         ));
 
         $this->assertEquals("* * * * * echo test >> /tmp/bliep.log 2>&1", (string) new Entry(
