@@ -18,15 +18,14 @@ class Redirection extends Field
     }
 
     /**
-     * @param string $strategy
+     * @param "append"|"overwrite"|">"|">>" $strategy
      * @return $this
      */
     public function setStrategy(string $strategy): self
     {
         $this->strategy = match ($strategy) {
             ">", "overwrite" => ">",
-            ">>", "append" => ">>",
-            default => ""
+            ">>", "append" => ">>"
         };
         return $this;
     }

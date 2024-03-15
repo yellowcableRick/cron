@@ -2,7 +2,7 @@
   "name": "yellowcable/cron",
   "description": "cron generator.",
   "homepage": "https://yellowcable.nl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "library",
   "license": "CC0-1.0",
   "authors": [
@@ -13,7 +13,7 @@
   ],
   "require": {
     "php": "^8.1",
-    "yellowcable/collection": "*"
+    "yellowcable/collection": "^2.0.0"
   },
 
   "require-dev": {

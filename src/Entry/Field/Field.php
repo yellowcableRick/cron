@@ -49,7 +49,7 @@ abstract class Field
         try {
             return new Validators(
                 array_map(
-                    fn($x) => $x->newInstance(),
+                    fn(ReflectionAttribute $x) => $x->newInstance(),
                     (new ReflectionClass($this))
                         ->getAttributes(Validator::class, ReflectionAttribute::IS_INSTANCEOF)
                 )
